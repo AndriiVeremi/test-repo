@@ -1,16 +1,6 @@
-function checkForSpam(message) {
-    let result;
-    // Change code below this line
-  if (message.toLowerCase().includes("sale") || message.toLowerCase().includes("spam")) {
-    result = true
-  } else {
-    result = false
-  }
-    // Change code above this line
-    return result;
-  }
+const fruits = ["apple", "peach", "pear", "banana"];
 
-  console.log(checkForSpam("Latest technology news"))
-  console.log(checkForSpam("Get best sale offers now!"))
-  
-  
+// Change code below this line
+
+const lastElementIndex = fruits.length -1;
+const lastElement = fruits[lastElementIndex]
