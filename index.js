@@ -1,17 +1,22 @@
-function countProps(object) {
-  let propCount = 0;
-  // Change code below this line
-for (const key in object) {
- 
-  if (object.hasOwnProperty(key)) {
-    // console.log(object[key])
-    propCount += 1;
+// Change code below this line
+function addOverNum(start, ...args) {
+  let total = 0;
+
+  for (const arg of args) {
+    if (arg > start) {
+      total += arg;
+    }
   }
-  // console.log(propCount)
-}
+
+  return total;
   // Change code above this line
-  return propCount;
 }
 
+console.log(addOverNum(10, 12, 4, 11, 48, 10, 8));
+console.log(addOverNum(50, 15, 27))
 
-console.log(countProps({ name: "Mango", age: 2 }))
+
+
+
+
+
