@@ -196,3 +196,18 @@ const cars = [{
   price: 7000,
 },
 ];
+
+const findCars = (cars, min, max) => {
+  const filteredCars = cars.filter(({ price }) => price >= min && price <= max);
+  return filteredCars.reduce(
+    (acc, { car, type }, idx) => {
+      return acc + `${idx + 1}. ${car} ${type}\n`;
+    },
+    filteredCars.length
+      ? `Кількість знайдених автомобілів ${filteredCars.length}: \n`
+      : "Вибачте але за вашим пошуком жодного авто не було знайдено."
+  );
+};
+
+console.log(findCars(cars, 7000, 9000));
+console.log(findCars(cars, 7000, 9000))
