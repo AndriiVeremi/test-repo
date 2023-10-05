@@ -1,21 +1,18 @@
-function testGreaterThan(val) {
-  if (val > 10) {
-    // Змініть цей рядок
-    return "Over 100";
-  }
+const ancestor = {
+  name: "Paul",
+  age: 83,
+  surname: "Dawson",
+  heritage: "Irish",
+};
+// Change code below this line
 
-  if (val < 10) {
-    // Змініть цей рядок
-    return "Over 10";
-  }
+const parent = Object.create(ancestor);
+parent.name = "Stacey";
+parent.surname = "Moore";
+parent.age = 54;
 
-  return "10 or Under";
-}
+const child = Object.create(parent);
+child.name = "Jason";
+child.age = 27;
 
-
-
-console.log(testGreaterThan(11)); //має повертати рядок 10 or Under
-
-console.log(testGreaterThan(99)); // має повертати рядок Over 10
-
-console.log(testGreaterThan(150)); //має повертати рядок Over 100
+// Change code above this line
