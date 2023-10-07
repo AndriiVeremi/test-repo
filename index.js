@@ -1,30 +1,54 @@
-class StringBuilder {
-  constructor(initialValue) {
-    this.value = initialValue;
+class User {
+  email;
+
+  constructor(email) {
+    this.email = email;
   }
 
-  getValue() {
-    return this.value;
+  get email() {
+    return this.email;
   }
 
-  padEnd(str) {
-    this.value = this.value.concat(str);
+  set email(newEmail) {
+    this.email = newEmail;
   }
-
-  padStart(str) {
-    this.value = this.value.unshift(str);
-  }
-
-  padBoth(str) {}
 }
 
-// Change code above this line
+class Admin extends User {
+  // Change code below this line
 
-const builder = new StringBuilder(".");
-console.log(builder.getValue()); // "."
-// builder.padStart("^");
-// console.log(builder.getValue()); // "^."
-builder.padEnd("^");
-console.log(builder.getValue()); // "^.^"
-builder.padBoth("=");
-console.log(builder.getValue()); // "=^.^="
+  static AccessLevel = {
+    BASIC: "basic",
+    SUPERUSER: "superuser",
+  };
+
+  blacklistedEmails = [];
+
+  constructor({ email, accessLevel }) {
+    super(email);
+    this.accessLevel = accessLevel;
+  }
+
+  blacklist(email) {
+    this.blacklistedEmails.push(email);
+  }
+
+  isBlacklisted(email) {
+    return this.blacklistedEmails.includes(email)
+  }
+
+  // Change code above this line
+}
+
+const mango = new Admin({
+  email: "mango@mail.com",
+  accessLevel: Admin.AccessLevel.SUPERUSER,
+});
+
+console.log(mango.email); // "mango@mail.com"
+console.log(mango.accessLevel); // "superuser"
+
+mango.blacklist("poly@mail.com");
+console.log(mango.blacklistedEmails); // ["poly@mail.com"]
+console.log(mango.isBlacklisted("mango@mail.com")); // false
+console.log(mango.isBlacklisted("poly@mail.com")); // true
