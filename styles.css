@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  padding: 60px;
+}
+
+.addForm {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.label {
+  display: flex;
+  font-size: 22px;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.input {
+  width: 200px;
+  height: 30px;
+}
+
+.list-car {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    list-style: none;
+}
+
+.item {
+    padding: 30px;
+    border: 1px dotted #333;
+    border-radius: 10px;
+    background-color: rgb(227, 227, 226);
+}
+
+.text {
+  font-size: 20px;
+}
+
+.btn {
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
