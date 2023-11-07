@@ -1,7 +1,5 @@
-function checkStorage(available, ordered) {
-  let message;
-  // Change code below this line
+function checkIfCanAccessContent(subType) {
+  const canAccessContent = subType === "vip" || subType === "pro"; // Change this line
 
-  // Change code above this line
-  return message;
+  return canAccessContent;
 }
